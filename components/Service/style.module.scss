@@ -1,0 +1,39 @@
+.opacity {
+  opacity: 0;
+  transition: 0.5s opacity;
+}
+
+.opacityActive {
+  opacity: 1;
+  transition: 0.5s opacity;
+}
+.bgArrow {
+  background-color: #e5f6ff;
+  transition: 0.5s background-color;
+}
+
+.bgArrowActive {
+  background-color: #005ce5;
+  transition: 0.5s background-color;
+}
+
+.rotateArrow {
+  transform: rotate(0deg);
+  transition: 0.4s transform;
+}
+
+.rotateArrowActive {
+  transform: rotate(180deg);
+  transition: 0.4s transform;
+}
+
+.service {
+  max-height: 300px;
+  overflow: hidden;
+  transition: 0.3s max-height;
+}
+
+.serviceActive {
+  max-height: 722px;
+  transition: 0.3s max-height;
+}

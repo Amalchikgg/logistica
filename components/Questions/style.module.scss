@@ -1,0 +1,16 @@
+.accordion {
+  max-height: 90px;
+  overflow: hidden;
+  transition: 0.3s max-height;
+}
+
+.accordionActive {
+  max-height: 300px;
+  transition: 0.5s max-height;
+}
+
+@media (max-width: 744px) {
+  .accordion {
+    max-height: 61px;
+  }
+}
