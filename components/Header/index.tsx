@@ -48,13 +48,13 @@ const Header = () => {
         <div className='flex items-center mr-10 mobile:hidden'>
           <p
             onClick={changeLanguage("ru")}
-            className='text-[36px] mr-3 text-white font-bold cursor-pointer tablet:text-[20px]'
+            className='text-[30px] mr-3 text-white font-bold cursor-pointer tablet:text-[20px]'
           >
             RU
           </p>
           <p
             onClick={changeLanguage("en")}
-            className='text-[36px] text-white font-bold cursor-pointer tablet:text-[20px]'
+            className='text-[30px] text-white font-bold cursor-pointer tablet:text-[20px]'
           >
             EN
           </p>

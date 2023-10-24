@@ -9,7 +9,7 @@ interface Props {
   text: string;
 }
 
-const Question = ({ title, text }: Props) => {
+const Questions = ({ title, text }: Props) => {
   const [show, $show] = useState(false);
   const handleShow = () => {
     $show(!show);
@@ -48,4 +48,4 @@ const Question = ({ title, text }: Props) => {
   );
 };
 
-export default Question;
+export default Questions;
