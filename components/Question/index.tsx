@@ -25,7 +25,7 @@ const Question = () => {
   ];
   return (
     <>
-      <p className='uppercase text-[#005CE5] mobile:text-[40px] mobile:text-center mobile:mb-[18px] mb-[47px] font-[900] text-[81px] tablet:text-[64px] tablet:leading-[1.1]'>
+      <p className='uppercase text-[#005CE5] mobile:text-[40px] mobile:text-center mobile:mb-[28px] mb-[47px] font-[900] text-[81px] tablet:text-[64px] tablet:leading-[1.1]'>
         {i18n.language === "en"
           ? "Frequently Asked Questions"
           : "ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ"}

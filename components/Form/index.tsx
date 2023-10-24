@@ -25,10 +25,12 @@ const Form = () => {
           (result) => {
             console.log(result.text);
             e.target.reset();
+            alert(t("formSubmit"));
           },
           (error) => {
             console.log(error.text);
             console.log("error");
+            alert(error.text);
           }
         );
     }

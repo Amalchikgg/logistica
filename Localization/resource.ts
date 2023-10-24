@@ -81,10 +81,12 @@ const resource = {
       aboutCompany: "О компании",
       request: "Запрос",
       aboutUs: "О нас",
+      formSubmit: "Ваша заявка отправлена",
     },
   },
   en: {
     translation: {
+      formSubmit: "Your request has been send",
       services: "Services",
       bookACall: "Book a call",
       sectionTitle:
