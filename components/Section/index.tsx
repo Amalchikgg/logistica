@@ -10,22 +10,17 @@ const Section = () => {
   return (
     <section className='flex  items-center gap-y-5 mb-[89px] tablet:mb-[52px] tablet:flex-col-reverse'>
       <Zoom>
-        <div className='relative w-[520px] tablet:max-w-full h-[584px] mr-[30px]'>
-          <video
-            width={"520"}
-            height={"584"}
-            autoPlay={true}
-            controls
-            className='!h-full !w-full'
-          >
-            <source
-              src='/assets/video/video2.mp4'
-              width={"520"}
-              type='video/mp4'
-              height='584'
-              className='!h-[584px]'
-            />
-          </video>
+        <div className='relative w-[520px] tablet:w-full h-[584px] tablet:h-[206px] mr-[30px] mobile:mr-0 tablet:mr-0'>
+          <iframe
+            className='rounded-[35px] tablet:w-full tablet:h-[206px]'
+            width='520'
+            height='584'
+            src='https://www.youtube.com/embed/l8oX8ryaIN0'
+            title='4 ноября 2023 г.'
+            frameBorder='0'
+            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+            allowFullScreen
+          ></iframe>
         </div>
       </Zoom>
       <div className='tablet:w-full'>
