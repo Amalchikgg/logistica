@@ -5,7 +5,7 @@ import resources from "./resource";
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: "ru",
+  lng: "en",
   keySeparator: false,
   interpolation: {
     escapeValue: false,
