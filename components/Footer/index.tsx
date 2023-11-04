@@ -83,7 +83,7 @@ const Footer = () => {
               href={"#"}
               className='text-[#005CE5] text-[20px] mobile:text-[12px] font-[700]'
             >
-              bisterrylogistics@gmail.com
+              bisterry.logistics@gmail.com
             </Link>
           </div>
         </div>
