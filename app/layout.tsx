@@ -2,8 +2,6 @@ import "./globals.css";
 import { Inter, Raleway } from "next/font/google";
 import CustomFont from "next/font/local";
 
-const inter = Inter({ subsets: ["latin"] });
-
 const raleway = Raleway({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "900"],

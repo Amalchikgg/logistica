@@ -3,12 +3,55 @@ import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import Zoom from "react-reveal/Zoom";
 import { useForm, ValidationError } from "@formspree/react";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 const Form = () => {
   const { t } = useTranslation();
   const form = useRef(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phoneNumber: "",
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("/api", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        alert(t("formSubmit"));
+        setFormData({
+          name: "",
+          email: "",
+          phoneNumber: "",
+        });
+      } else {
+        console.error("Failed to send email:", data.error);
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+    }
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const sendEmail = (e: any) => {
     e.preventDefault();
@@ -63,29 +106,35 @@ const Form = () => {
           </div>
           <form
             ref={form}
-            onSubmit={sendEmail}
+            onSubmit={handleSubmit}
             className='w-[587px] tablet:w-full -mt-3 tablet:-mt-0'
           >
             <input
+              onChange={handleChange}
+              value={formData.name}
               id='name'
-              name='user_name'
+              name='name'
               type='text'
               placeholder={t("name")}
               className='h-[70px] mb-[10px] mobile:text-[12px] mobile:h-[45px] w-full bg-transparent outline-none border border-white text-white font-[500] text-[20px] rounded-[12px] pl-[29px] placeholder:text-white'
             />
 
             <input
+              onChange={handleChange}
+              value={formData.phoneNumber}
               id='phone'
-              name='user_phonenumber'
+              name='phoneNumber'
               type='tel'
               placeholder={t("phoneNumber")}
               className='h-[70px] mb-[10px] w-full mobile:text-[12px] mobile:h-[45px] bg-transparent outline-none border border-white text-white font-[500] text-[20px] rounded-[12px] pl-[29px] placeholder:text-white'
             />
 
             <input
+              onChange={handleChange}
+              value={formData.email}
               type='email'
               id='email'
-              name='user_email'
+              name='email'
               placeholder='E-mail'
               className='h-[70px] mb-[35px] mobile:mb-6 w-full mobile:text-[12px] mobile:h-[45px] bg-transparent outline-none border border-white text-white font-[500] text-[20px] rounded-[12px] pl-[29px] placeholder:text-white'
             />
